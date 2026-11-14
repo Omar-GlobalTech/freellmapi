@@ -28,36 +28,36 @@
   </style>
   <div id="root" data-composition-id="facts" data-width="1920" data-height="1080">
     <div id="fx-paper" data-layout-ignore></div>
-    <div id="fx-b" class="clip" data-start="0" data-duration="5.15" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-b" class="clip" data-start="0" data-duration="3.85" data-layout-allow-overflow data-layout-allow-overlap>
       <div id="fx-b-in">
         <p id="fx-b-kick">Zum Start auf</p>
         <div class="fx-plat" id="fx-ps">PS5</div>
         <div class="fx-plat" id="fx-xb">XBOX SERIES X|S</div>
       </div>
     </div>
-    <div class="pc clip" id="fx-car" data-start="0.5" data-duration="4.65" data-layout-ignore style="left:1130px;top:110px;width:660px;height:371px">
+    <div class="pc clip" id="fx-car" data-start="0.41" data-duration="3.44" data-layout-ignore style="left:1130px;top:110px;width:660px;height:371px">
       <div class="pc-in" id="fx-car-in"><img src="assets/img/car.jpg" alt="" /></div>
     </div>
-    <div id="fx-a" class="clip" data-start="5.15" data-duration="2.85" data-layout-allow-overflow>
+    <div id="fx-a" class="clip" data-start="3.85" data-duration="2.15" data-layout-allow-overflow>
       <div id="fx-a-in">
         <div id="fx-a-title"><span id="fx-a-t1">PRELOAD</span> <span id="fx-a-t2">LÄUFT</span></div>
         <div id="fx-bar"><div id="fx-bar-fill"></div></div>
-        <p id="fx-a-sub"><span id="fx-a-sub-in">Seit 10. November für digitale Vorbestellungen</span></p>
+        <p id="fx-a-sub"><span id="fx-a-sub-in">Seit dem 10. November</span></p>
       </div>
     </div>
-    <div id="fx-c" class="clip" data-start="8.0" data-duration="2.5" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-c" class="clip" data-start="6" data-duration="2.05" data-layout-allow-overflow data-layout-allow-overlap>
       <div id="fx-c-in">
         <div id="fx-pc">PC?<div id="fx-strike"></div></div>
         <div id="fx-pc-note">Noch kein Termin</div>
       </div>
     </div>
-    <div class="pc clip" id="fx-pool" data-start="8.4" data-duration="2.1" data-layout-ignore style="left:1010px;top:170px;width:780px;height:312px">
+    <div class="pc clip" id="fx-pool" data-start="6.27" data-duration="1.78" data-layout-ignore style="left:1010px;top:170px;width:780px;height:312px">
       <div class="pc-in" id="fx-pool-in"><img src="assets/img/pool.jpg" alt="" /></div>
     </div>
-    <div class="tag clip" id="fx-wait" data-start="8.65" data-duration="1.85" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:1090px;top:500px">
+    <div class="tag clip" id="fx-wait" data-start="6.46" data-duration="1.59" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:1090px;top:500px">
       <div class="tag-in" id="fx-wait-in" style="font-size:46px;padding:14px 22px">PC-Spieler aktuell</div>
     </div>
-    <div id="fx-flood-clip" class="clip" data-start="10.0" data-duration="0.5" data-layout-ignore><div id="fx-flood"></div></div>
+    <div id="fx-flood-clip" class="clip" data-start="7.56" data-duration="0.49" data-layout-ignore><div id="fx-flood"></div></div>
   </div>
   <script>
     (function () {
@@ -72,22 +72,22 @@
       const blurOut = (sel, t) =>
         tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
 
-      blurIn("#fx-b-kick", 0.12);
-      pop("#fx-car-in", 0.55, 3);
-      tl.fromTo("#fx-ps", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.95);
-      tl.fromTo("#fx-xb", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 3.36);
-      tl.fromTo(["#fx-b-in", "#fx-car-in"], { y: 0 }, { y: -1200, duration: 0.32, ease: "power3.in", immediateRender: false }, 4.8);
-      tl.fromTo("#fx-a-in", { y: 1100, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 5.15);
-      tl.fromTo("#fx-bar-fill", { scaleX: 0 }, { scaleX: 1, duration: 2.0, ease: "power1.inOut" }, 5.5);
-      tl.fromTo("#fx-a-sub-in", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 5.75);
-      tl.fromTo("#fx-a-in", { y: 0 }, { y: -1200, duration: 0.3, ease: "power3.in", immediateRender: false }, 7.68);
-      tl.fromTo("#fx-c-in", { y: 1100, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 8.0);
+      blurIn("#fx-b-kick", 0.1);
+      pop("#fx-car-in", 0.45, 3);
+      tl.fromTo("#fx-ps", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.75);
+      tl.fromTo("#fx-xb", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 2.6);
+      tl.fromTo(["#fx-b-in", "#fx-car-in"], { y: 0 }, { y: -1200, duration: 0.32, ease: "power3.in", immediateRender: false }, 3.55);
+      tl.fromTo("#fx-a-in", { y: 1100, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 3.85);
+      tl.fromTo("#fx-bar-fill", { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: "power1.inOut" }, 4.1);
+      tl.fromTo("#fx-a-sub-in", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 4.5);
+      tl.fromTo("#fx-a-in", { y: 0 }, { y: -1200, duration: 0.3, ease: "power3.in", immediateRender: false }, 5.75);
+      tl.fromTo("#fx-c-in", { y: 1100, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 6);
       tl.set("#fx-pc-note", { opacity: 0 }, 0);
-      pop("#fx-pool-in", 8.45, -3);
-      pop("#fx-wait-in", 8.7, 2);
-      tl.fromTo("#fx-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 8.85);
-      tl.fromTo("#fx-pc-note", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 9.0);
-      tl.fromTo("#fx-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power2.inOut" }, 10.05);
+      pop("#fx-pool-in", 6.3, -3);
+      pop("#fx-wait-in", 6.5, 2);
+      tl.fromTo("#fx-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 6.65);
+      tl.fromTo("#fx-pc-note", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 6.75);
+      tl.fromTo("#fx-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power2.inOut" }, 7.6);
 
       window.__timelines["facts"] = tl;
     })();
