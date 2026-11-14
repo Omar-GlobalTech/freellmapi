@@ -1,7 +1,9 @@
-# Review
+# Review (Fassung 2, 60 s)
 
-- **Entscheidungen:** Storyline 1 (Abreißkalender), deutsche Texte, 16:9, 24,5 s. Kein Originalmaterial von Rockstar, nur Typografie und gezeichnete Objekte.
-- **Fakten (Websuche, 14.11.2026):** Termin 19.11.2026, zwei Verschiebungen (Herbst 2025 → 26.05.2026 → 19.11.2026), Bestätigung durch Take-Two, Preload seit 10.11., PS5 und Xbox Series X|S, PC ohne Termin. Preis und Uhrzeit weggelassen, da nur eine Quelle.
-- **Gemessen:** `hyperframes check` ohne Fehler; Render 1920x1080, 30 fps, 24,5 s. **Angesehen:** Beat-Sheet und Einzelbilder bei 5,5 / 6,2 / 7,6 / 9,9 / 11,5 / 12,6 / 13,2 / 14,5 / 17,8 / 24,25 s. Das fertige MP4 wurde nicht in Bewegung angesehen.
-- **Behaltene Warnung:** `film_silent` – keine Musikquelle ohne HeyGen-Anmeldung; der Film ist stumm.
-- **Schwächste Einstellung:** die Kalenderszene; rechts unten bleibt Fläche leer, und der Übergang zur Faktenszene zeigt kurz reines Papier.
+- **Entscheidungen:** 16:9 beibehalten; deutsches Voice-over; offizielle Bilder von rockstargames.com/VI als Bildkarten und Vollbilder; Pop-ups auf die Sprechzeiten gelegt.
+- **Voice-over:** ElevenLabs lehnte die Erzeugung ab (kostenloses Kontingent des Kontos gesperrt). Ersatz: lokales Modell Piper „thorsten-high“. Englische Namen sind lautmalerisch geschrieben, damit das deutsche Modell sie ausspricht. Nicht angehört; per Spracherkennung geprüft: „Take-Two“ und „Vice City“ werden erkannt, „Trailer“ und „Urlaub“ wurden falsch erkannt.
+- **Gemessen:** `hyperframes check` ohne Fehler und Warnungen; Render 1920x1080, 30 fps, 60,0 s, Ton -16,7 LUFS, Spitze -4,3 dBFS. **Angesehen:** 40 Einzelbilder über alle Szenen. Das MP4 wurde nicht in Bewegung angesehen.
+- **Fakten:** Rockstar: 475 Mio. Aufrufe für Trailer 2 in 24 Stunden über alle Plattformen; Wikipedia: Jason Duval, Lucia Caminos, Leonida, Vice City, Bonnie-und-Clyde-Vorbild, Enthüllung Dezember 2023.
+- **Bilder:** © Rockstar Games; nicht im Repository, `assets/fetch-images.sh` lädt sie neu. Der Render liegt ebenfalls nur lokal.
+- **Keine Musik, keine Soundeffekte.**
+- **Schwächste Stelle:** die Stimme; danach die Checkliste (50,7–54 s), die nur das obere Drittel füllt.

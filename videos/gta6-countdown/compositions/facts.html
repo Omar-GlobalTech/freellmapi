@@ -1,183 +1,94 @@
 <template>
   <style>
-    #root {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      color: var(--color-ink, #1b1140);
-    }
-    #fx-paper {
-      position: absolute;
-      inset: 0;
-      background: var(--color-paper, #fff1d6);
-    }
-    #fx-a {
-      position: absolute;
-      left: 130px;
-      top: 150px;
-      width: 1660px;
-      height: 780px;
-    }
-    #fx-a-title {
-      font-family: "League Gothic";
-      font-size: 380px;
-      line-height: 0.95;
-      white-space: nowrap;
-    }
-    #fx-a-title span {
-      display: inline-block;
-    }
-    #fx-bar {
-      margin-top: 36px;
-      width: 1660px;
-      height: 150px;
-      border: 12px solid var(--color-ink, #1b1140);
-      overflow: hidden;
-    }
-    #fx-bar-fill {
-      width: 100%;
-      height: 100%;
-      background: var(--color-ink, #1b1140);
-      transform-origin: 0% 50%;
-    }
-    #fx-a-sub {
-      margin-top: 44px;
-      font-family: "Outfit";
-      font-weight: 600;
-      font-size: 60px;
-      line-height: 1.15;
-    }
-    #fx-a-sub span {
-      display: inline-block;
-    }
-    #fx-b {
-      position: absolute;
-      left: 130px;
-      top: 120px;
-      width: 1660px;
-      height: 840px;
-    }
-    #fx-b-kick {
-      font-family: "Outfit";
-      font-weight: 600;
-      font-size: 60px;
-      line-height: 1.1;
-    }
-    .fx-plat {
-      font-family: "League Gothic";
-      font-size: 270px;
-      line-height: 0.98;
-      white-space: nowrap;
-    }
-    #fx-pc-row {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 84px;
-    }
-    #fx-pc {
-      position: relative;
-      color: transparent;
-      -webkit-text-stroke: 8px var(--color-ink, #1b1140);
-    }
-    #fx-strike {
-      position: absolute;
-      left: -30px;
-      top: 118px;
-      width: 290px;
-      height: 26px;
-      background: var(--color-accent, #ff2e88);
-      transform-origin: 0% 50%;
-    }
-    #fx-pc-note {
-      font-family: "Archivo Black";
-      font-size: 84px;
-      line-height: 1;
-    }
-    #fx-flood {
-      position: absolute;
-      inset: 0;
-      background: var(--color-ground, #ffb627);
-      transform-origin: 50% 100%;
-    }
+    #root { position: absolute; inset: 0; overflow: hidden; color: var(--color-ink, #1b1140); }
+
+    .pc { position: absolute; }
+    .pc-in { position: absolute; inset: 0; background: var(--color-paper, #fff1d6); border: 8px solid var(--color-ink, #1b1140); box-shadow: 16px 16px 0 var(--color-ink, #1b1140); overflow: hidden; }
+    .pc-in img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tag { position: absolute; }
+    .tag-in { display: inline-block; background: var(--color-ink, #1b1140); color: var(--color-paper, #fff1d6); font-family: "Archivo Black"; line-height: 1; white-space: nowrap; }
+    .tag-in b { font-weight: inherit; color: var(--color-accent, #ff2e88); }
+
+    #fx-paper { position: absolute; inset: 0; background: var(--color-paper, #fff1d6); }
+    .fx-plat { font-family: "League Gothic"; font-size: 290px; line-height: 0.98; white-space: nowrap; }
+    #fx-b { position: absolute; left: 130px; top: 210px; width: 1660px; height: 820px; }
+    #fx-b-kick { font-family: "Outfit"; font-weight: 600; font-size: 64px; line-height: 1.1; margin-bottom: 12px; }
+    #fx-a { position: absolute; left: 130px; top: 150px; width: 1660px; height: 780px; }
+    #fx-a-title { font-family: "League Gothic"; font-size: 380px; line-height: 0.95; white-space: nowrap; }
+    #fx-a-title span, #fx-a-sub span { display: inline-block; }
+    #fx-bar { margin-top: 36px; width: 1660px; height: 150px; border: 12px solid var(--color-ink, #1b1140); overflow: hidden; }
+    #fx-bar-fill { width: 100%; height: 100%; background: var(--color-ink, #1b1140); transform-origin: 0% 50%; }
+    #fx-a-sub { margin-top: 44px; font-family: "Outfit"; font-weight: 600; font-size: 60px; line-height: 1.15; }
+    #fx-c { position: absolute; left: 130px; top: 120px; width: 1660px; height: 840px; }
+    #fx-pc { position: relative; display: inline-block; font-family: "League Gothic"; font-size: 640px; line-height: 0.95; color: transparent; -webkit-text-stroke: 12px var(--color-ink, #1b1140); }
+    #fx-strike { position: absolute; left: -40px; top: 270px; width: 760px; height: 44px; background: var(--color-accent, #ff2e88); transform-origin: 0% 50%; }
+    #fx-pc-note { font-family: "Archivo Black"; font-size: 130px; line-height: 1; margin-top: 10px; }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #ffb627); transform-origin: 50% 100%; }
+
   </style>
   <div id="root" data-composition-id="facts" data-width="1920" data-height="1080">
     <div id="fx-paper" data-layout-ignore></div>
-
-    <div id="fx-a" class="clip" data-start="0" data-duration="3.3" data-layout-allow-overflow>
+    <div id="fx-b" class="clip" data-start="0" data-duration="5.15" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="fx-b-in">
+        <p id="fx-b-kick">Zum Start auf</p>
+        <div class="fx-plat" id="fx-ps">PS5</div>
+        <div class="fx-plat" id="fx-xb">XBOX SERIES X|S</div>
+      </div>
+    </div>
+    <div class="pc clip" id="fx-car" data-start="0.5" data-duration="4.65" data-layout-ignore style="left:1130px;top:110px;width:660px;height:371px">
+      <div class="pc-in" id="fx-car-in"><img src="assets/img/car.jpg" alt="" /></div>
+    </div>
+    <div id="fx-a" class="clip" data-start="5.15" data-duration="2.85" data-layout-allow-overflow>
       <div id="fx-a-in">
         <div id="fx-a-title"><span id="fx-a-t1">PRELOAD</span> <span id="fx-a-t2">LÄUFT</span></div>
         <div id="fx-bar"><div id="fx-bar-fill"></div></div>
         <p id="fx-a-sub"><span id="fx-a-sub-in">Seit 10. November für digitale Vorbestellungen</span></p>
       </div>
     </div>
-
-    <div id="fx-b" class="clip" data-start="3.3" data-duration="3.2" data-layout-allow-overflow>
-      <div id="fx-b-in">
-        <p id="fx-b-kick">Zum Start auf</p>
-        <div class="fx-plat" id="fx-ps">PS5</div>
-        <div class="fx-plat" id="fx-xb">XBOX SERIES X|S</div>
-        <div id="fx-pc-row">
-          <div class="fx-plat" id="fx-pc">PC<div id="fx-strike"></div></div>
-          <div id="fx-pc-note">noch kein Termin</div>
-        </div>
+    <div id="fx-c" class="clip" data-start="8.0" data-duration="2.5" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="fx-c-in">
+        <div id="fx-pc">PC?<div id="fx-strike"></div></div>
+        <div id="fx-pc-note">Noch kein Termin</div>
       </div>
     </div>
-
-    <div id="fx-flood-clip" class="clip" data-start="5.7" data-duration="0.8" data-layout-ignore>
-      <div id="fx-flood"></div>
+    <div class="pc clip" id="fx-pool" data-start="8.4" data-duration="2.1" data-layout-ignore style="left:1010px;top:170px;width:780px;height:312px">
+      <div class="pc-in" id="fx-pool-in"><img src="assets/img/pool.jpg" alt="" /></div>
     </div>
+    <div class="tag clip" id="fx-wait" data-start="8.65" data-duration="1.85" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:1090px;top:500px">
+      <div class="tag-in" id="fx-wait-in" style="font-size:46px;padding:14px 22px">PC-Spieler aktuell</div>
+    </div>
+    <div id="fx-flood-clip" class="clip" data-start="10.0" data-duration="0.5" data-layout-ignore><div id="fx-flood"></div></div>
   </div>
   <script>
     (function () {
       const tl = gsap.timeline({ paused: true });
-      // A: preload
-      tl.fromTo(
-        ["#fx-a-t1", "#fx-a-t2"],
-        { opacity: 0, filter: "blur(12px)" },
-        { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.12, ease: "power4.out" },
-        0.08,
-      );
-      tl.fromTo(
-        "#fx-bar",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.15, ease: "power2.out" },
-        0.4,
-      );
-      tl.fromTo(
-        "#fx-bar-fill",
-        { scaleX: 0 },
-        { scaleX: 1, duration: 2.0, ease: "power1.inOut" },
-        0.5,
-      );
-      tl.fromTo(
-        "#fx-a-sub-in",
-        { opacity: 0, filter: "blur(8px)" },
-        { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
-        0.7,
-      );
-      // A leaves upward, B follows from below
-      tl.fromTo(
-        "#fx-a-in",
-        { y: 0, filter: "blur(0px)" },
-        { y: -1150, filter: "blur(14px)", duration: 0.34, ease: "power3.in", immediateRender: false },
-        2.94,
-      );
-      tl.fromTo(
-        "#fx-b-in",
-        { y: 1100, filter: "blur(14px)" },
-        { y: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out" },
-        3.3,
-      );
-      tl.fromTo("#fx-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 4.25);
-      tl.fromTo(
-        "#fx-pc-note",
-        { opacity: 0, filter: "blur(8px)" },
-        { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" },
-        4.4,
-      );
-      // colour flood into the end card
-      tl.fromTo("#fx-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power2.inOut" }, 5.75);
+
+      const pop = (sel, t, rot = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.45, rotation: rot - 10 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.38, ease: "back.out(1.7)" }, t);
+      const unpop = (sel, t) =>
+        tl.to(sel, { opacity: 0, scale: 0.7, duration: 0.16, ease: "power2.in" }, t);
+      const blurIn = (sel, t, extra = {}) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, Object.assign({ opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, extra), t);
+      const blurOut = (sel, t) =>
+        tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
+
+      blurIn("#fx-b-kick", 0.12);
+      pop("#fx-car-in", 0.55, 3);
+      tl.fromTo("#fx-ps", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.95);
+      tl.fromTo("#fx-xb", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 3.36);
+      tl.fromTo(["#fx-b-in", "#fx-car-in"], { y: 0 }, { y: -1200, duration: 0.32, ease: "power3.in", immediateRender: false }, 4.8);
+      tl.fromTo("#fx-a-in", { y: 1100, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 5.15);
+      tl.fromTo("#fx-bar-fill", { scaleX: 0 }, { scaleX: 1, duration: 2.0, ease: "power1.inOut" }, 5.5);
+      tl.fromTo("#fx-a-sub-in", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 5.75);
+      tl.fromTo("#fx-a-in", { y: 0 }, { y: -1200, duration: 0.3, ease: "power3.in", immediateRender: false }, 7.68);
+      tl.fromTo("#fx-c-in", { y: 1100, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 8.0);
+      tl.set("#fx-pc-note", { opacity: 0 }, 0);
+      pop("#fx-pool-in", 8.45, -3);
+      pop("#fx-wait-in", 8.7, 2);
+      tl.fromTo("#fx-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 8.85);
+      tl.fromTo("#fx-pc-note", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 9.0);
+      tl.fromTo("#fx-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power2.inOut" }, 10.05);
+
       window.__timelines["facts"] = tl;
     })();
   </script>

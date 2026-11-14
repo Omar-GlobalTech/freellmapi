@@ -1,2 +1,5 @@
 .hyperframes/
 node_modules/
+# Offizielle Rockstar-Bilder und der Render, der sie enthält, bleiben lokal (Urheberrecht)
+assets/img/
+renders/

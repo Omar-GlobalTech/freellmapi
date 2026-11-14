@@ -16,3 +16,12 @@ SHOTS:   0–4 s Hook „5 / NOCH TAGE“ → Wisch nach links
 BANNED:  dunkle Leere, Glühen, Partikel, Verläufe, Glaskarten, drei Karten in einer Reihe, Logo in der Ecke,
          Rockstar-Logo oder Spielgrafik (nicht lizenziert).
 QA:      0 s (Thumbnail nicht leer), 5,6 s, 7,6 s, 11,5 s, 14,5 s, 17,8 s, 24,25 s
+
+## Fassung 2 (60 s, mit Voice-over)
+
+TIME:    60 s = 1800 Frames; die Stimme ist die Uhr (assets/audio/voiceover.wav, Satzanfänge siehe REVIEW.md)
+SHOTS:   0–5,3 s Hook mit Key-Art-Karte · 5,3–18,4 s Kalender mit Notizen und Bildkarten ·
+         18,4–30,8 s Story: Jason & Lucia, Leonida, Vice City als Vollbild mit Namensschildern ·
+         30,8–40,2 s Hype: Zähler auf 475 Mio., Trailer- und Posterkarten ·
+         40,2–50,7 s Fakten: Plattformen, Preload, PC · 50,7–60 s Checkliste und Endkarte
+POP-UPS: Bildkarten (8 px Rand, harter Schatten 16 px) und nachtblaue Schilder, Einsatz 0,38 s back.out(1.7)

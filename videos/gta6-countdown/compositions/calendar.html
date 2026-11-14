@@ -1,11 +1,13 @@
 <template>
   <style>
-    #root {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      color: var(--color-ink, #1b1140);
-    }
+    #root { position: absolute; inset: 0; overflow: hidden; color: var(--color-ink, #1b1140); }
+
+    .pc { position: absolute; }
+    .pc-in { position: absolute; inset: 0; background: var(--color-paper, #fff1d6); border: 8px solid var(--color-ink, #1b1140); box-shadow: 16px 16px 0 var(--color-ink, #1b1140); overflow: hidden; }
+    .pc-in img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tag { position: absolute; }
+    .tag-in { display: inline-block; background: var(--color-ink, #1b1140); color: var(--color-paper, #fff1d6); font-family: "Archivo Black"; line-height: 1; white-space: nowrap; }
+    .tag-in b { font-weight: inherit; color: var(--color-accent, #ff2e88); }
     #cal {
       position: absolute;
       left: 190px;
@@ -104,35 +106,14 @@
       height: 724px;
       background: var(--color-paper, #fff1d6);
     }
-    .cal-head {
-      position: absolute;
-      left: 960px;
-      top: 300px;
-      width: 860px;
-      font-family: "Archivo Black";
-      font-size: 124px;
-      line-height: 1.02;
-      letter-spacing: -0.02em;
-    }
-    .cal-head span {
-      display: inline-block;
-    }
-    #cal-sub {
-      position: absolute;
-      left: 964px;
-      top: 590px;
-      width: 820px;
-      font-family: "Outfit";
-      font-weight: 600;
-      font-size: 56px;
-      line-height: 1.18;
-    }
-    #cal-sub span {
-      display: inline-block;
-    }
+    .cal-head { position: absolute; left: 960px; top: 130px; width: 860px; font-family: "Archivo Black"; font-size: 124px; line-height: 1.02; letter-spacing: -0.02em; }
+    .cal-head span { display: inline-block; }
+    .cal-note { position: absolute; left: 964px; top: 408px; width: 780px; font-family: "Outfit"; font-weight: 600; font-size: 54px; line-height: 1.16; }
+    .cal-note span { display: inline-block; }
+
   </style>
   <div id="root" data-composition-id="calendar" data-width="1920" data-height="1080">
-    <div id="cal" class="clip" data-start="0" data-duration="9" data-layout-allow-overflow>
+    <div id="cal" class="clip" data-start="0" data-duration="13.1" data-layout-allow-overflow>
       <div id="cal-in">
         <div id="cal-shadow"></div>
         <div class="cal-page" id="cal-p3">
@@ -171,112 +152,73 @@
           <div class="cal-ring" style="left: 456px"></div>
         </div>
       </div>
-    </div>
 
-    <h2 class="cal-head clip" id="cal-h1" data-start="0.3" data-duration="2">
-      <span id="cal-h1-in">Der erste<br />Termin</span>
-    </h2>
-    <h2 class="cal-head clip" id="cal-h2" data-start="2.4" data-duration="2">
-      <span id="cal-h2-in">Der zweite<br />Termin</span>
-    </h2>
-    <h2 class="cal-head clip" id="cal-h3" data-start="4.6" data-duration="3.5">
-      <span id="cal-h3-in">Der dritte<br />steht</span>
-    </h2>
-    <p class="clip" id="cal-sub" data-start="5.1" data-duration="3">
-      <span class="cal-sw">Take-Two</span> <span class="cal-sw">bestätigt:</span>
-      <span class="cal-sw">Es</span> <span class="cal-sw">bleibt</span>
-      <span class="cal-sw">beim</span> <span class="cal-sw">19.&nbsp;November</span>
+    <h2 class="cal-head clip" id="cal-h1" data-start="0.3" data-duration="3.6"><span id="cal-h1-in">Der erste<br />Termin</span></h2>
+    <p class="cal-note clip" id="cal-n1" data-start="1.5" data-duration="2.4"><span id="cal-n1-in">Enthüllt im Dezember 2023</span></p>
+    <h2 class="cal-head clip" id="cal-h2" data-start="4.0" data-duration="4.1"><span id="cal-h2-in">Der zweite<br />Termin</span></h2>
+    <p class="cal-note clip" id="cal-n2" data-start="5.3" data-duration="2.8"><span id="cal-n2-in">Angekündigt im Mai 2025</span></p>
+    <h2 class="cal-head clip" id="cal-h3" data-start="8.4" data-duration="4.4"><span id="cal-h3-in">Der dritte<br />steht</span></h2>
+    <p class="cal-note clip" id="cal-n3" data-start="10.3" data-duration="2.5">
+      <span class="cal-sw">Take-Two</span> <span class="cal-sw">bestätigt:</span> <span class="cal-sw">Es</span> <span class="cal-sw">bleibt</span> <span class="cal-sw">beim</span> <span class="cal-sw">19.&nbsp;November</span>
     </p>
-
-    <div id="cal-flood-clip" class="clip" data-start="7.8" data-duration="1.2" data-layout-ignore>
-      <div id="cal-flood"></div>
+    <div class="pc clip" id="cal-ph1" data-start="1.0" data-duration="2.9" data-layout-ignore style="left:964px;top:560px;width:640px;height:360px">
+      <div class="pc-in" id="cal-ph1-in"><img src="assets/img/city-night.jpg" alt="" /></div>
     </div>
+    <div class="pc clip" id="cal-ph2" data-start="4.4" data-duration="3.7" data-layout-ignore style="left:964px;top:560px;width:640px;height:360px">
+      <div class="pc-in" id="cal-ph2-in"><img src="assets/img/boat.jpg" alt="" /></div>
+    </div>
+    <div class="pc clip" id="cal-ph3" data-start="9.2" data-duration="3.6" data-layout-ignore style="left:964px;top:570px;width:600px;height:338px">
+      <div class="pc-in" id="cal-ph3-in"><img src="assets/img/keyart.jpg" alt="" /></div>
+    </div>
+    <div class="tag clip" id="cal-ok" data-start="12.25" data-duration="0.85" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:1280px;top:790px">
+      <div class="tag-in" id="cal-ok-in" style="font-size:64px;padding:18px 30px"><b>✔</b> BESTÄTIGT</div>
+    </div>
+    <div id="cal-flood-clip" class="clip" data-start="12.4" data-duration="0.7" data-layout-ignore><div id="cal-flood"></div></div>
   </div>
   <script>
     (function () {
       const tl = gsap.timeline({ paused: true });
-      const blurIn = (sel, t) =>
-        tl.fromTo(
-          sel,
-          { opacity: 0, filter: "blur(10px)" },
-          { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" },
-          t,
-        );
+
+      const pop = (sel, t, rot = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.45, rotation: rot - 10 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.38, ease: "back.out(1.7)" }, t);
+      const unpop = (sel, t) =>
+        tl.to(sel, { opacity: 0, scale: 0.7, duration: 0.16, ease: "power2.in" }, t);
+      const blurIn = (sel, t, extra = {}) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, Object.assign({ opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, extra), t);
       const blurOut = (sel, t) =>
         tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
+
       const slam = (sel, t) => {
-        tl.fromTo(
-          sel,
-          { opacity: 0, scale: 2.6, rotation: -10 },
-          { opacity: 1, scale: 1, rotation: -10, duration: 0.15, ease: "power3.in" },
-          t,
-        );
-        // the block takes the hit
+        tl.fromTo(sel, { opacity: 0, scale: 2.6, rotation: -10 }, { opacity: 1, scale: 1, rotation: -10, duration: 0.15, ease: "power3.in" }, t);
         tl.to("#cal-in", { y: 14, duration: 0.05, ease: "power2.out" }, t + 0.15);
         tl.to("#cal-in", { y: 0, duration: 0.3, ease: "elastic.out(1, 0.5)" }, t + 0.2);
       };
       const tear = (sel, t) =>
-        tl.fromTo(
-          sel,
-          { rotation: 0, x: 0, y: 0 },
-          {
-            rotation: 22,
-            x: -160,
-            y: 1250,
-            duration: 0.6,
-            ease: "power2.in",
-            immediateRender: false,
-          },
-          t,
-        );
-
-      // arrive from the right, matching the hook's whip
-      tl.fromTo(
-        "#cal-in",
-        { x: 2100, filter: "blur(16px)" },
-        { x: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out" },
-        0,
-      );
+        tl.fromTo(sel, { rotation: 0, x: 0, y: 0 }, { rotation: 22, x: -160, y: 1250, duration: 0.6, ease: "power2.in", immediateRender: false }, t);
+      tl.fromTo("#cal-in", { x: 2100, filter: "blur(16px)" }, { x: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, 0);
       tl.set(["#cal-s1", "#cal-s2"], { opacity: 0 }, 0);
-
       blurIn("#cal-h1-in", 0.35);
-      slam("#cal-s1", 1.3);
-      blurOut("#cal-h1-in", 2.05);
-      tear("#cal-p1", 2.1);
+      pop("#cal-ph1-in", 1.05, -3);
+      blurIn("#cal-n1-in", 1.55);
+      slam("#cal-s1", 3.14);
+      blurOut(["#cal-h1-in", "#cal-n1-in"], 3.65);
+      unpop("#cal-ph1-in", 3.7);
+      tear("#cal-p1", 3.7);
+      blurIn("#cal-h2-in", 4.05);
+      pop("#cal-ph2-in", 4.45, 3);
+      blurIn("#cal-n2-in", 5.35);
+      slam("#cal-s2", 7.28);
+      blurOut(["#cal-h2-in", "#cal-n2-in"], 7.85);
+      unpop("#cal-ph2-in", 7.9);
+      tear("#cal-p2", 7.9);
+      blurIn("#cal-h3-in", 8.45);
+      tl.fromTo("#cal-ring-path", { attr: { "stroke-dashoffset": 1.1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.55, ease: "power2.inOut" }, 9.05);
+      pop("#cal-ph3-in", 9.25, -2);
+      tl.fromTo(".cal-sw", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power2.out" }, 10.4);
+      pop("#cal-ok-in", 12.28, -6);
+      tl.fromTo("#cal-flood", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power1.out" }, 12.55);
+      tl.fromTo("#cal-flood", { scale: 1 }, { scale: 5.2, duration: 0.5, ease: "power2.inOut" }, 12.55);
 
-      blurIn("#cal-h2-in", 2.45);
-      slam("#cal-s2", 3.4);
-      blurOut("#cal-h2-in", 4.15);
-      tear("#cal-p2", 4.2);
-
-      blurIn("#cal-h3-in", 4.65);
-      tl.fromTo(
-        ".cal-sw",
-        { opacity: 0, filter: "blur(6px)" },
-        { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.08, ease: "power2.out" },
-        5.15,
-      );
-      tl.fromTo(
-        "#cal-ring-path",
-        { attr: { "stroke-dashoffset": 1.1 } },
-        { attr: { "stroke-dashoffset": 0 }, duration: 0.55, ease: "power2.inOut" },
-        5.9,
-      );
-
-      // the page becomes the next world
-      blurOut(["#cal-h3-in", ".cal-sw"], 7.95);
-      tl.fromTo(
-        "#cal-flood",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.14, ease: "power1.out" },
-        8.1,
-      );
-      tl.fromTo(
-        "#cal-flood",
-        { scale: 1 },
-        { scale: 5.2, duration: 0.8, ease: "power2.inOut" },
-        8.1,
-      );
       window.__timelines["calendar"] = tl;
     })();
   </script>
