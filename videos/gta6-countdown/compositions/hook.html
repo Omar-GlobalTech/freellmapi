@@ -1,0 +1,121 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      color: var(--color-ink, #1b1140);
+    }
+    #hk-sun {
+      position: absolute;
+      left: 1000px;
+      top: 500px;
+      width: 1000px;
+      height: 1000px;
+    }
+    #hk-sun-in {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--color-sun, #ff5b3a);
+    }
+    #hk-five {
+      position: absolute;
+      left: 150px;
+      top: 96px;
+      width: 520px;
+      height: 900px;
+    }
+    #hk-five-in {
+      font-family: "League Gothic";
+      font-size: 1050px;
+      line-height: 0.86;
+      transform-origin: 30% 60%;
+    }
+    #hk-words {
+      position: absolute;
+      left: 760px;
+      top: 190px;
+      width: 900px;
+    }
+    .hk-w {
+      display: block;
+      font-family: "Archivo Black";
+      font-size: 230px;
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+    }
+    #hk-sub {
+      position: absolute;
+      left: 772px;
+      top: 690px;
+      width: 1000px;
+      font-family: "Outfit";
+      font-weight: 600;
+      font-size: 58px;
+      line-height: 1.15;
+    }
+    #hk-sub-in {
+      display: inline-block;
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1920" data-height="1080">
+    <div id="hk-sun" class="clip" data-start="0" data-duration="4" data-layout-ignore>
+      <div id="hk-sun-in"></div>
+    </div>
+    <div id="hk-five" class="clip" data-start="0" data-duration="4" data-layout-allow-overflow>
+      <div id="hk-five-in">5</div>
+    </div>
+    <div id="hk-words" class="clip" data-start="0" data-duration="4" data-layout-allow-overlap>
+      <span class="hk-w" id="hk-w1">NOCH</span>
+      <span class="hk-w" id="hk-w2">TAGE</span>
+    </div>
+    <p id="hk-sub" class="clip" data-start="0.8" data-duration="3.2" data-layout-allow-overlap>
+      <span id="hk-sub-in">bis Grand Theft Auto VI erscheint</span>
+    </p>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // the 5 is on screen at frame 0 and settles
+      tl.fromTo("#hk-five-in", { scale: 1.22 }, { scale: 1, duration: 0.7, ease: "expo.out" }, 0);
+      tl.fromTo(
+        "#hk-w1",
+        { opacity: 0.25, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+        0.12,
+      );
+      tl.fromTo(
+        "#hk-w2",
+        { opacity: 0, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+        0.34,
+      );
+      tl.fromTo(
+        "#hk-sub-in",
+        { opacity: 0, filter: "blur(8px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+        0.9,
+      );
+      // whip out to the left, the sun sets
+      tl.fromTo(
+        "#hk-sun-in",
+        { y: 0 },
+        { y: 640, duration: 0.5, ease: "power2.in", immediateRender: false },
+        3.4,
+      );
+      tl.fromTo(
+        ["#hk-five-in", "#hk-w1", "#hk-w2", "#hk-sub-in"],
+        { x: 0 },
+        { x: -2300, duration: 0.42, ease: "power3.in", stagger: 0.03, immediateRender: false },
+        3.45,
+      );
+      tl.to(
+        ["#hk-five-in", "#hk-w1", "#hk-w2", "#hk-sub-in"],
+        { filter: "blur(16px)", duration: 0.3, ease: "power2.in" },
+        3.5,
+      );
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

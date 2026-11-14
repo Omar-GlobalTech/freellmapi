@@ -1,0 +1,141 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      color: var(--color-ink, #1b1140);
+    }
+    #ec-sun {
+      position: absolute;
+      left: 1040px;
+      top: 430px;
+      width: 1100px;
+      height: 1100px;
+    }
+    #ec-sun-in {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--color-sun, #ff5b3a);
+    }
+    #ec-title {
+      position: absolute;
+      left: 150px;
+      top: 130px;
+      width: 1500px;
+      font-family: "Archivo Black";
+      font-size: 92px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    #ec-title span {
+      display: inline-block;
+    }
+    #ec-date {
+      position: absolute;
+      left: 140px;
+      top: 232px;
+      width: 1700px;
+      height: 470px;
+      overflow: hidden;
+      font-family: "League Gothic";
+      font-size: 500px;
+      line-height: 0.94;
+      white-space: nowrap;
+    }
+    .ec-ch {
+      display: inline-block;
+    }
+    #ec-days {
+      position: absolute;
+      left: 150px;
+      top: 730px;
+      width: 800px;
+      height: 170px;
+    }
+    #ec-days-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ink, #1b1140);
+      transform-origin: 0% 50%;
+    }
+    #ec-days-tx {
+      position: absolute;
+      inset: 0;
+      font-family: "Archivo Black";
+      font-size: 104px;
+      line-height: 170px;
+      text-align: center;
+      color: var(--color-paper, #fff1d6);
+    }
+    #ec-days-tx b {
+      font-weight: inherit;
+      color: var(--color-accent, #ff2e88);
+    }
+    #ec-foot {
+      position: absolute;
+      left: 152px;
+      top: 934px;
+      width: 1500px;
+      font-family: "Outfit";
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+    #ec-foot span {
+      display: inline-block;
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1920" data-height="1080">
+    <div id="ec-sun" class="clip" data-start="0" data-duration="5" data-layout-ignore>
+      <div id="ec-sun-in"></div>
+    </div>
+    <h1 id="ec-title" class="clip" data-start="0" data-duration="5" data-layout-allow-overlap>
+      <span id="ec-title-in">Grand Theft Auto VI</span>
+    </h1>
+    <div id="ec-date" class="clip" data-start="0" data-duration="5" data-layout-allow-overflow data-layout-allow-overlap>
+      <span class="ec-ch">1</span><span class="ec-ch">9</span><span class="ec-ch">.</span><span class="ec-ch">1</span><span class="ec-ch">1</span><span class="ec-ch">.</span><span class="ec-ch">2</span><span class="ec-ch">0</span><span class="ec-ch">2</span><span class="ec-ch">6</span>
+    </div>
+    <div id="ec-days" class="clip" data-start="1.1" data-duration="3.9">
+      <div id="ec-days-bg"></div>
+      <div id="ec-days-tx">Noch <b>5</b> Tage</div>
+    </div>
+    <p id="ec-foot" class="clip" data-start="1.6" data-duration="3.4" data-layout-allow-overlap>
+      <span id="ec-foot-in">Inoffizieller News-Clip · Stand: 14. November 2026 · Quellen: Take-Two, Rockstar Games</span>
+    </p>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // the sun comes back up
+      tl.fromTo("#ec-sun-in", { y: 700 }, { y: 0, duration: 0.9, ease: "expo.out" }, 0);
+      tl.fromTo(
+        "#ec-title-in",
+        { opacity: 0, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" },
+        0.15,
+      );
+      tl.fromTo(
+        ".ec-ch",
+        { yPercent: 105 },
+        { yPercent: 0, duration: 0.55, stagger: 0.035, ease: "expo.out" },
+        0.3,
+      );
+      tl.fromTo("#ec-days-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.32, ease: "expo.out" }, 1.15);
+      tl.fromTo(
+        "#ec-days-tx",
+        { opacity: 0, filter: "blur(8px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+        1.3,
+      );
+      tl.fromTo(
+        "#ec-foot-in",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.25, ease: "power2.out" },
+        1.7,
+      );
+      window.__timelines["endcard"] = tl;
+    })();
+  </script>
+</template>
