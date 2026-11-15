@@ -1,0 +1,116 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; color: var(--color-ink, #0b2a33); }
+
+    .pc { position: absolute; }
+    .pc-in { position: absolute; inset: 0; background: var(--color-paper, #fff7e8); border: 8px solid var(--color-ink, #0b2a33); box-shadow: 16px 16px 0 var(--color-ink, #0b2a33); overflow: hidden; }
+    .pc-in img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tag { position: absolute; }
+    .tag-in { display: inline-block; background: var(--color-ink, #0b2a33); color: var(--color-paper, #fff7e8); font-family: "Archivo Black"; line-height: 1; white-space: nowrap; }
+    .tag-in b { font-weight: inherit; color: var(--color-accent, #ff3d6e); }
+
+    #st-paper { position: absolute; inset: 0; background: var(--color-paper, #fff7e8); }
+    #st-q { position: absolute; left: 120px; top: 330px; width: 740px; font-family: "League Gothic"; font-size: 250px; line-height: 0.95; }
+    #st-q span { display: inline-block; }
+    .st-img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+    .st-img-in { position: absolute; inset: 0; }
+    .st-img-in img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #st-base-in { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--color-ink, #0b2a33); }
+    #st-sun { position: absolute; left: 240px; top: 1340px; width: 1100px; height: 1100px; border-radius: 50%; background: var(--color-sun, #ffd23f); }
+    #st-flood { position: absolute; inset: 0; background: var(--color-ground, #12b5a6); transform-origin: 50% 100%; }
+
+  </style>
+  <div id="root" data-composition-id="story" data-width="1080" data-height="1920">
+    <div id="st-paper" data-layout-ignore><div id="st-sun"></div></div>
+    <h2 id="st-q" class="clip" data-start="0" data-duration="1.13"><span id="st-q-in">WORUM<br />GEHT'S?</span></h2>
+    <div id="st-base" class="clip" data-start="0.8" data-duration="14.33" data-layout-ignore><div id="st-base-in"></div></div>
+    <div class="st-img clip" id="st-i1" data-start="0.8" data-duration="3.05" data-layout-ignore><div class="st-img-in" id="st-i1-in"><img style="object-position:22% 50%" src="assets/img/jason-lucia.jpg" alt="" /></div></div>
+    <div class="st-img clip" id="st-i2" data-start="3.49" data-duration="2.76" data-layout-ignore><div class="st-img-in" id="st-i2-in"><img style="object-position:57% 50%" src="assets/img/heist.jpg" alt="" /></div></div>
+    <div class="st-img clip" id="st-i3" data-start="5.9" data-duration="3.65" data-layout-ignore><div class="st-img-in" id="st-i3-in"><img style="object-position:40% 50%" src="assets/img/leonida-day.jpg" alt="" /></div></div>
+    <div class="st-img clip" id="st-i4" data-start="9.23" data-duration="2.01" data-layout-ignore><div class="st-img-in" id="st-i4-in"><img style="object-position:43% 50%" src="assets/img/city-night.jpg" alt="" /></div></div>
+    <div class="tag clip" id="st-jason" data-start="1.49" data-duration="2.1" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1070px">
+      <div class="tag-in" id="st-jason-in" style="font-size:64px;padding:18px 30px">JASON DUVAL</div>
+    </div>
+    <div class="tag clip" id="st-lucia" data-start="2.45" data-duration="1.14" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:960px">
+      <div class="tag-in" id="st-lucia-in" style="font-size:58px;padding:18px 30px">LUCIA CAMINOS</div>
+    </div>
+    <div class="tag clip" id="st-gang" data-start="3.59" data-duration="2.4" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:960px">
+      <div class="tag-in" id="st-gang-in" style="font-size:52px;padding:18px 30px">GANGSTERPÄRCHEN</div>
+    </div>
+    <div class="tag clip" id="st-bonnie" data-start="4.8" data-duration="1.19" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1070px">
+      <div class="tag-in" id="st-bonnie-in" style="font-size:46px;padding:18px 30px">wie <b>Bonnie &amp; Clyde</b></div>
+    </div>
+    <div class="tag clip" id="st-place" data-start="5.99" data-duration="3.46" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:900px">
+      <div class="tag-in" id="st-place-in" style="font-size:44px;padding:18px 30px">Schauplatz</div>
+    </div>
+    <div class="tag clip" id="st-leo" data-start="7.38" data-duration="2.07" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:975px">
+      <div class="tag-in" id="st-leo-in" style="font-size:100px;padding:10px 40px 24px">LEONIDA</div>
+    </div>
+    <div class="tag clip" id="st-fl" data-start="7.95" data-duration="1.51" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1135px">
+      <div class="tag-in" id="st-fl-in" style="font-size:42px;padding:18px 30px">angelehnt an <b>Florida</b></div>
+    </div>
+    <div class="tag clip" id="st-vc" data-start="9.38" data-duration="1.68" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:940px">
+      <div class="tag-in" id="st-vc-in" style="font-size:80px;padding:10px 40px 24px">VICE CITY</div>
+    </div>
+    <div class="tag clip" id="st-mia" data-start="9.95" data-duration="1.11" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1080px">
+      <div class="tag-in" id="st-mia-in" style="font-size:44px;padding:18px 30px">das <b>Miami</b> der Reihe</div>
+    </div>
+    <div class="st-img clip" id="st-i5" data-start="11.05" data-duration="4.08" data-layout-ignore><div class="st-img-in" id="st-i5-in"><img style="object-position:18% 50%" src="assets/img/boat.jpg" alt="" /></div></div>
+    <div class="tag clip" id="st-free" data-start="11.18" data-duration="3.95" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:900px">
+      <div class="tag-in" id="st-free-in" style="font-size:44px;padding:18px 30px">Neu dabei</div>
+    </div>
+    <div class="tag clip" id="st-a1" data-start="11.95" data-duration="3.18" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:985px">
+      <div class="tag-in" id="st-a1-in" style="font-size:40px;padding:18px 30px">CRIMINAL PROFILE</div>
+    </div>
+    <div class="tag clip" id="st-a2" data-start="13.22" data-duration="1.91" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1070px">
+      <div class="tag-in" id="st-a2-in" style="font-size:40px;padding:18px 30px">Euer <b>Ruf</b> zählt</div>
+    </div>
+    <div class="tag clip" id="st-a3" data-start="13.94" data-duration="1.19" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1155px">
+      <div class="tag-in" id="st-a3-in" style="font-size:40px;padding:18px 30px">je nachdem, was ihr anstellt</div>
+    </div>
+    <div id="st-flood-clip" class="clip" data-start="14.45" data-duration="0.68" data-layout-ignore><div id="st-flood"></div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      const pop = (sel, t, rot = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.45, rotation: rot - 10 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.38, ease: "back.out(1.7)" }, t);
+      const unpop = (sel, t) =>
+        tl.to(sel, { opacity: 0, scale: 0.7, duration: 0.16, ease: "power2.in" }, t);
+      const blurIn = (sel, t, extra = {}) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, Object.assign({ opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, extra), t);
+      const blurOut = (sel, t) =>
+        tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
+
+      const wipe = (id, t, from) => {
+        const start = { up: "inset(100% 0% 0% 0%)", left: "inset(0% 0% 0% 100%)", right: "inset(0% 100% 0% 0%)" }[from];
+        tl.fromTo(id, { clipPath: start }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: "power3.out" }, t);
+      };
+      const push = (id, t, d, a, b) => tl.fromTo(id + " img", { scale: a }, { scale: b, duration: d, ease: "none" }, t);
+      blurIn("#st-q-in", 0.1);
+      tl.to("#st-q-in", { y: -1500, filter: "blur(14px)", duration: 0.3, ease: "power3.in" }, 0.75);
+      wipe("#st-i1-in", 0.8, "up"); push("#st-i1-in", 0.8, 3.05, 1.0, 1.07);
+      pop("#st-jason-in", 1.51, 2);
+      pop("#st-lucia-in", 2.46, -2);
+      wipe("#st-i2-in", 3.49, "left"); push("#st-i2-in", 3.49, 2.76, 1.08, 1.0);
+      pop("#st-gang-in", 3.64, -2);
+      pop("#st-bonnie-in", 4.82, 3);
+      wipe("#st-i3-in", 5.9, "right"); push("#st-i3-in", 5.9, 3.65, 1.0, 1.08);
+      pop("#st-place-in", 6.04, -2);
+      pop("#st-leo-in", 7.4, 0);
+      pop("#st-fl-in", 7.98, 2);
+      wipe("#st-i4-in", 9.23, "up"); push("#st-i4-in", 9.23, 2.01, 1.07, 1.0);
+      pop("#st-vc-in", 9.39, 0);
+      pop("#st-mia-in", 9.99, -2);
+      wipe("#st-i5-in", 11.05, "left"); push("#st-i5-in", 11.05, 4.08, 1.0, 1.07);
+      pop("#st-free-in", 11.21, -2);
+      pop("#st-a1-in", 11.98, 2);
+      pop("#st-a2-in", 13.28, -2);
+      pop("#st-a3-in", 14.02, 2);
+      tl.fromTo("#st-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power2.inOut" }, 14.52);
+
+      window.__timelines["story"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,96 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; color: var(--color-ink, #0b2a33); }
+
+    .pc { position: absolute; }
+    .pc-in { position: absolute; inset: 0; background: var(--color-paper, #fff7e8); border: 8px solid var(--color-ink, #0b2a33); box-shadow: 16px 16px 0 var(--color-ink, #0b2a33); overflow: hidden; }
+    .pc-in img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tag { position: absolute; }
+    .tag-in { display: inline-block; background: var(--color-ink, #0b2a33); color: var(--color-paper, #fff7e8); font-family: "Archivo Black"; line-height: 1; white-space: nowrap; }
+    .tag-in b { font-weight: inherit; color: var(--color-accent, #ff3d6e); }
+
+    #fx-paper { position: absolute; inset: 0; background: var(--color-paper, #fff7e8); }
+    .fx-plat { font-family: "League Gothic"; font-size: 160px; line-height: 0.98; white-space: nowrap; }
+    #fx-b { position: absolute; left: 120px; top: 290px; width: 730px; height: 900px; }
+    #fx-b-kick { font-family: "Outfit"; font-weight: 600; font-size: 50px; line-height: 1.1; margin-bottom: 12px; }
+    #fx-a { position: absolute; left: 120px; top: 290px; width: 730px; height: 900px; }
+    #fx-a-title { font-family: "League Gothic"; font-size: 260px; line-height: 0.95; }
+    #fx-a-title span, #fx-a-sub span { display: inline-block; }
+    #fx-bar { margin-top: 30px; width: 730px; height: 110px; border: 12px solid var(--color-ink, #0b2a33); overflow: hidden; }
+    #fx-bar-fill { width: 100%; height: 100%; background: var(--color-ink, #0b2a33); transform-origin: 0% 50%; }
+    #fx-a-sub { margin-top: 36px; font-family: "Outfit"; font-weight: 600; font-size: 50px; line-height: 1.15; }
+    #fx-c { position: absolute; left: 120px; top: 290px; width: 730px; height: 900px; }
+    #fx-pc { position: relative; display: inline-block; font-family: "League Gothic"; font-size: 520px; line-height: 0.95; color: transparent; -webkit-text-stroke: 11px var(--color-ink, #0b2a33); }
+    #fx-strike { position: absolute; left: -30px; top: 220px; width: 640px; height: 38px; background: var(--color-accent, #ff3d6e); transform-origin: 0% 50%; }
+    #fx-pc-note { font-family: "Archivo Black"; font-size: 54px; line-height: 1; margin-top: 10px; white-space: nowrap; }
+    #fx-sun { position: absolute; left: 240px; top: 1340px; width: 1100px; height: 1100px; border-radius: 50%; background: var(--color-sun, #ffd23f); }
+    #fx-flood { position: absolute; inset: 0; background: var(--color-ground, #12b5a6); transform-origin: 50% 100%; }
+
+  </style>
+  <div id="root" data-composition-id="facts" data-width="1080" data-height="1920">
+    <div id="fx-paper" data-layout-ignore><div id="fx-sun"></div></div>
+    <div id="fx-b" class="clip" data-start="0" data-duration="3.96" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="fx-b-in">
+        <p id="fx-b-kick">Zum Start auf</p>
+        <div class="fx-plat" id="fx-ps" style="font-size:280px">PS5</div>
+        <div class="fx-plat" id="fx-xb">XBOX<br />SERIES X|S</div>
+      </div>
+    </div>
+    <div class="pc clip" id="fx-car" data-start="0.4" data-duration="3.56" data-layout-ignore style="left:470px;top:330px;width:380px;height:214px">
+      <div class="pc-in" id="fx-car-in"><img src="assets/img/car.jpg" alt="" /></div>
+    </div>
+    <div id="fx-a" class="clip" data-start="3.96" data-duration="2.13" data-layout-allow-overflow>
+      <div id="fx-a-in">
+        <div id="fx-a-title"><span id="fx-a-t1">PRELOAD</span><br /><span id="fx-a-t2">LÄUFT</span></div>
+        <div id="fx-bar"><div id="fx-bar-fill"></div></div>
+        <p id="fx-a-sub"><span id="fx-a-sub-in">Seit dem 10. November</span></p>
+      </div>
+    </div>
+    <div id="fx-c" class="clip" data-start="6.08" data-duration="2.06" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="fx-c-in">
+        <div id="fx-pc">PC?<div id="fx-strike"></div></div>
+        <div id="fx-pc-note">Noch kein Termin</div>
+      </div>
+    </div>
+    <div class="pc clip" id="fx-pool" data-start="6.35" data-duration="1.8" data-layout-ignore style="left:120px;top:900px;width:650px;height:260px">
+      <div class="pc-in" id="fx-pool-in"><img src="assets/img/pool.jpg" alt="" /></div>
+    </div>
+    <div class="tag clip" id="fx-wait" data-start="6.54" data-duration="1.6" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:190px;top:1125px">
+      <div class="tag-in" id="fx-wait-in" style="font-size:38px;padding:12px 20px">PC-Spieler aktuell</div>
+    </div>
+    <div id="fx-flood-clip" class="clip" data-start="7.67" data-duration="0.47" data-layout-ignore><div id="fx-flood"></div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      const pop = (sel, t, rot = 0) =>
+        tl.fromTo(sel, { opacity: 0, scale: 0.45, rotation: rot - 10 }, { opacity: 1, scale: 1, rotation: rot, duration: 0.38, ease: "back.out(1.7)" }, t);
+      const unpop = (sel, t) =>
+        tl.to(sel, { opacity: 0, scale: 0.7, duration: 0.16, ease: "power2.in" }, t);
+      const blurIn = (sel, t, extra = {}) =>
+        tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, Object.assign({ opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, extra), t);
+      const blurOut = (sel, t) =>
+        tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
+
+      blurIn("#fx-b-kick", 0.1);
+      pop("#fx-car-in", 0.44, 3);
+      tl.fromTo("#fx-ps", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.71);
+      tl.fromTo("#fx-xb", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 2.7);
+      tl.fromTo(["#fx-b-in", "#fx-car-in"], { y: 0 }, { y: -2100, duration: 0.32, ease: "power3.in", immediateRender: false }, 3.65);
+      tl.fromTo("#fx-a-in", { y: 2000, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 3.96);
+      tl.fromTo("#fx-bar-fill", { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: "power1.inOut" }, 4.21);
+      tl.fromTo("#fx-a-sub-in", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 4.6);
+      tl.fromTo("#fx-a-in", { y: 0 }, { y: -2100, duration: 0.3, ease: "power3.in", immediateRender: false }, 5.84);
+      tl.fromTo("#fx-c-in", { y: 2000, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 6.08);
+      tl.set("#fx-pc-note", { opacity: 0 }, 0);
+      pop("#fx-pool-in", 6.38, -3);
+      pop("#fx-wait-in", 6.58, 2);
+      tl.fromTo("#fx-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 6.74);
+      tl.fromTo("#fx-pc-note", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 6.84);
+      tl.fromTo("#fx-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power2.inOut" }, 7.71);
+
+      window.__timelines["facts"] = tl;
+    })();
+  </script>
+</template>
