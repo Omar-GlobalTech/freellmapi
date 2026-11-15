@@ -27,24 +27,23 @@
 
   </style>
   <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
-    <div id="ec-list" class="clip" data-start="0" data-duration="3.21" data-layout-allow-overflow data-layout-allow-overlap>
-      <div class="ec-row" id="ec-r1"><div class="ec-box"><span class="ec-tick" id="ec-t1">✔</span></div><span>Festplatte<br />freiräumen</span></div>
-      <div class="ec-row" id="ec-r2"><div class="ec-box"><span class="ec-tick" id="ec-t2">✔</span></div><span>Donnerstag<br />freihalten</span></div>
-    </div>
-    <h1 id="ec-title" class="clip" data-start="3.21" data-duration="5.37" data-layout-allow-overlap><span id="ec-title-in">Grand Theft Auto VI</span></h1>
-    <div id="ec-date" class="clip" data-start="3.21" data-duration="5.37" data-layout-allow-overflow data-layout-allow-overlap>
+    <h1 id="ec-title" class="clip" data-start="0.2" data-duration="8.94" data-layout-allow-overlap><span id="ec-title-in">Grand Theft Auto VI</span></h1>
+    <div id="ec-date" class="clip" data-start="0.2" data-duration="8.94" data-layout-allow-overflow data-layout-allow-overlap>
       <span class="ec-ch">1</span><span class="ec-ch">9</span><span class="ec-ch">.</span><span class="ec-ch">1</span><span class="ec-ch">1</span><span class="ec-ch">.</span><span class="ec-ch">2</span><span class="ec-ch">0</span><span class="ec-ch">2</span><span class="ec-ch">6</span>
     </div>
-    <div id="ec-days" class="clip" data-start="4.01" data-duration="4.57"><div id="ec-days-bg"></div><div id="ec-days-tx">Noch <b>4</b> Tage</div></div>
-    <div class="pc clip" id="ec-vc" data-start="4.95" data-duration="3.64" data-layout-ignore style="left:120px;top:900px;width:600px;height:300px">
-      <div class="pc-in" id="ec-vc-in"><img src="assets/img/city-night.jpg" alt="" /></div>
-    </div>
-    <div class="tag clip" id="ec-q" data-start="5.34" data-duration="3.24" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:140px;top:1125px">
-      <div class="tag-in" id="ec-q-in" style="font-size:52px;padding:22px 28px">Wer ist <b>dabei?</b></div>
-    </div>
-    <p id="ec-foot" class="clip" data-start="4.46" data-duration="4.13" data-layout-allow-overlap>
+    <div id="ec-days" class="clip" data-start="0.8" data-duration="8.34"><div id="ec-days-bg"></div><div id="ec-days-tx">Noch <b>4</b> Tage</div></div>
+    <p id="ec-foot" class="clip" data-start="1.25" data-duration="7.89" data-layout-allow-overlap>
       <span id="ec-foot-in">Inoffizieller News-Clip · Stand: 15.11.2026 · Quellen: Take-Two, Rockstar Games · Bilder: © Rockstar Games</span>
     </p>
+    <div class="tag clip" id="ec-like" data-start="3.15" data-duration="5.99" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:905px">
+      <div class="tag-in" id="ec-like-in" style="font-size:54px;padding:18px 28px"><b>♥</b> LIKE</div>
+    </div>
+    <div class="tag clip" id="ec-follow" data-start="3.85" data-duration="5.29" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1000px">
+      <div class="tag-in" id="ec-follow-in" style="font-size:54px;padding:18px 28px"><b>+</b> FOLGEN</div>
+    </div>
+    <div class="tag clip" id="ec-cm" data-start="4.6" data-duration="4.54" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1095px">
+      <div class="tag-in" id="ec-cm-in" style="font-size:40px;padding:18px 26px 20px">Kommentiert: Welches<br />Spiel als <b>Nächstes?</b></div>
+    </div>
   </div>
   <script>
     (function () {
@@ -58,19 +57,14 @@
         tl.fromTo(sel, { opacity: 0, filter: "blur(10px)" }, Object.assign({ opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, extra), t);
       const blurOut = (sel, t) =>
         tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
-      tl.set(["#ec-t1", "#ec-t2"], { opacity: 0 }, 0);
-      tl.fromTo("#ec-r1", { opacity: 0, x: -120, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 0.31);
-      tl.fromTo("#ec-t1", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power3.in" }, 1.17);
-      tl.fromTo("#ec-r2", { opacity: 0, x: -120, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.76);
-      tl.fromTo("#ec-t2", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.14, ease: "power3.in" }, 2.62);
-      tl.to(["#ec-r1", "#ec-r2"], { y: -1600, filter: "blur(14px)", duration: 0.28, ease: "power3.in", stagger: 0.03 }, 3.02);
-      blurIn("#ec-title-in", 3.27);
-      tl.fromTo(".ec-ch", { yPercent: 105 }, { yPercent: 0, duration: 0.55, stagger: 0.035, ease: "expo.out" }, 3.32);
-      tl.fromTo("#ec-days-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.32, ease: "expo.out" }, 4.06);
-      blurIn("#ec-days-tx", 4.21);
-      tl.fromTo("#ec-foot-in", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 4.55);
-      pop("#ec-vc-in", 4.99, -3);
-      pop("#ec-q-in", 5.37, 4);
+      blurIn("#ec-title-in", 0.2);
+      tl.fromTo(".ec-ch", { yPercent: 105 }, { yPercent: 0, duration: 0.55, stagger: 0.035, ease: "expo.out" }, 0.2);
+      tl.fromTo("#ec-days-bg", { scaleX: 0 }, { scaleX: 1, duration: 0.32, ease: "expo.out" }, 0.85);
+      blurIn("#ec-days-tx", 1);
+      tl.fromTo("#ec-foot-in", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 1.34);
+      pop("#ec-like-in", 3.2, -3);
+      pop("#ec-follow-in", 3.9, 2);
+      pop("#ec-cm-in", 4.65, -2);
 
       window.__timelines["endcard"] = tl;
     })();

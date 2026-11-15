@@ -100,7 +100,7 @@
 
   </style>
   <div id="root" data-composition-id="calendar" data-width="1080" data-height="1920">
-    <div id="cal" class="clip" data-start="0" data-duration="10.74" data-layout-allow-overflow>
+    <div id="cal" class="clip" data-start="0" data-duration="10.7" data-layout-allow-overflow>
       <div id="cal-in">
         <div id="cal-shadow"></div>
         <div class="cal-page" id="cal-p3">
@@ -141,27 +141,27 @@
       </div>
     </div>
 
-    <h2 class="cal-head clip" id="cal-h1" data-start="0.24" data-duration="3.35"><span id="cal-h1-in">Der erste<br />Termin</span></h2>
-    <p class="cal-note clip" id="cal-n1" data-start="1.42" data-duration="2.16"><span id="cal-n1-in">Enthüllt im Dezember 2023</span></p>
-    <h2 class="cal-head clip" id="cal-h2" data-start="3.73" data-duration="2.64"><span id="cal-h2-in">Der zweite<br />Termin</span></h2>
-    <p class="cal-note clip" id="cal-n2" data-start="4.8" data-duration="1.55"><span id="cal-n2-in">Angekündigt im Mai 2025</span></p>
-    <h2 class="cal-head clip" id="cal-h3" data-start="6.67" data-duration="3.84"><span id="cal-h3-in">Der dritte<br />steht</span></h2>
-    <p class="cal-note clip" id="cal-n3" data-start="8.47" data-duration="2.06">
+    <h2 class="cal-head clip" id="cal-h1" data-start="0.2" data-duration="3.35"><span id="cal-h1-in">Der erste<br />Termin</span></h2>
+    <p class="cal-note clip" id="cal-n1" data-start="1.38" data-duration="2.16"><span id="cal-n1-in">Enthüllt im Dezember 2023</span></p>
+    <h2 class="cal-head clip" id="cal-h2" data-start="3.69" data-duration="2.64"><span id="cal-h2-in">Der zweite<br />Termin</span></h2>
+    <p class="cal-note clip" id="cal-n2" data-start="4.76" data-duration="1.55"><span id="cal-n2-in">Angekündigt im Mai 2025</span></p>
+    <h2 class="cal-head clip" id="cal-h3" data-start="6.63" data-duration="3.84"><span id="cal-h3-in">Der dritte<br />steht</span></h2>
+    <p class="cal-note clip" id="cal-n3" data-start="8.43" data-duration="2.06">
       <span class="cal-sw">Take-Two</span> <span class="cal-sw">bestätigt:</span> <span class="cal-sw">Es</span> <span class="cal-sw">bleibt</span> <span class="cal-sw">beim</span> <span class="cal-sw">19.&nbsp;November</span>
     </p>
-    <div class="pc clip" id="cal-ph1" data-start="0.93" data-duration="2.66" data-layout-ignore style="left:590px;top:940px;width:310px;height:233px">
+    <div class="pc clip" id="cal-ph1" data-start="0.89" data-duration="2.66" data-layout-ignore style="left:590px;top:940px;width:310px;height:233px">
       <div class="pc-in" id="cal-ph1-in"><img src="assets/img/city-night.jpg" alt="" /></div>
     </div>
-    <div class="pc clip" id="cal-ph2" data-start="4.1" data-duration="2.27" data-layout-ignore style="left:590px;top:940px;width:310px;height:233px">
+    <div class="pc clip" id="cal-ph2" data-start="4.06" data-duration="2.27" data-layout-ignore style="left:590px;top:940px;width:310px;height:233px">
       <div class="pc-in" id="cal-ph2-in"><img src="assets/img/boat.jpg" alt="" /></div>
     </div>
-    <div class="pc clip" id="cal-ph3" data-start="7.57" data-duration="2.94" data-layout-ignore style="left:590px;top:940px;width:310px;height:233px">
+    <div class="pc clip" id="cal-ph3" data-start="7.53" data-duration="2.94" data-layout-ignore style="left:590px;top:940px;width:310px;height:233px">
       <div class="pc-in" id="cal-ph3-in"><img src="assets/img/keyart.jpg" alt="" /></div>
     </div>
-    <div class="tag clip" id="cal-ok" data-start="10.04" data-duration="0.7" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:470px;top:400px">
+    <div class="tag clip" id="cal-ok" data-start="10" data-duration="0.7" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:470px;top:400px">
       <div class="tag-in" id="cal-ok-in" style="font-size:38px;padding:18px 30px"><b>✔</b> BESTÄTIGT</div>
     </div>
-    <div id="cal-flood-clip" class="clip" data-start="10.19" data-duration="0.55" data-layout-ignore><div id="cal-flood"></div></div>
+    <div id="cal-flood-clip" class="clip" data-start="10.15" data-duration="0.55" data-layout-ignore><div id="cal-flood"></div></div>
   </div>
   <script>
     (function () {
@@ -185,27 +185,27 @@
         tl.fromTo(sel, { rotation: 0, x: 0, y: 0 }, { rotation: 22, x: -160, y: 2700, duration: 0.6, ease: "power2.in", immediateRender: false }, t);
       tl.fromTo("#cal-in", { x: 2100, filter: "blur(16px)" }, { x: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, 0);
       tl.set(["#cal-s1", "#cal-s2"], { opacity: 0 }, 0);
-      blurIn("#cal-h1-in", 0.28);
-      pop("#cal-ph1-in", 0.98, -3);
-      blurIn("#cal-n1-in", 1.47);
-      slam("#cal-s1", 2.5);
-      blurOut(["#cal-h1-in", "#cal-n1-in"], 3.24);
-      unpop("#cal-ph1-in", 3.31);
-      tear("#cal-p1", 3.31);
-      blurIn("#cal-h2-in", 3.8);
-      pop("#cal-ph2-in", 4.13, 3);
-      blurIn("#cal-n2-in", 4.84);
-      slam("#cal-s2", 5.31);
-      blurOut(["#cal-h2-in", "#cal-n2-in"], 6.1);
-      unpop("#cal-ph2-in", 6.16);
-      tear("#cal-p2", 6.16);
-      blurIn("#cal-h3-in", 6.71);
-      tl.fromTo("#cal-ring-path", { attr: { "stroke-dashoffset": 1.1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.55, ease: "power2.inOut" }, 7.34);
-      pop("#cal-ph3-in", 7.65, -2);
-      tl.fromTo(".cal-sw", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power2.out" }, 8.55);
-      pop("#cal-ok-in", 10.06, -6);
-      tl.fromTo("#cal-flood", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power1.out" }, 10.34);
-      tl.fromTo("#cal-flood", { scale: 1 }, { scale: 7, duration: 0.5, ease: "power2.inOut" }, 10.34);
+      blurIn("#cal-h1-in", 0.24);
+      pop("#cal-ph1-in", 0.94, -3);
+      blurIn("#cal-n1-in", 1.43);
+      slam("#cal-s1", 2.46);
+      blurOut(["#cal-h1-in", "#cal-n1-in"], 3.2);
+      unpop("#cal-ph1-in", 3.27);
+      tear("#cal-p1", 3.27);
+      blurIn("#cal-h2-in", 3.76);
+      pop("#cal-ph2-in", 4.09, 3);
+      blurIn("#cal-n2-in", 4.8);
+      slam("#cal-s2", 5.27);
+      blurOut(["#cal-h2-in", "#cal-n2-in"], 6.06);
+      unpop("#cal-ph2-in", 6.12);
+      tear("#cal-p2", 6.12);
+      blurIn("#cal-h3-in", 6.67);
+      tl.fromTo("#cal-ring-path", { attr: { "stroke-dashoffset": 1.1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.55, ease: "power2.inOut" }, 7.3);
+      pop("#cal-ph3-in", 7.61, -2);
+      tl.fromTo(".cal-sw", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power2.out" }, 8.51);
+      pop("#cal-ok-in", 10.02, -6);
+      tl.fromTo("#cal-flood", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power1.out" }, 10.3);
+      tl.fromTo("#cal-flood", { scale: 1 }, { scale: 7, duration: 0.5, ease: "power2.inOut" }, 10.3);
 
       window.__timelines["calendar"] = tl;
     })();
