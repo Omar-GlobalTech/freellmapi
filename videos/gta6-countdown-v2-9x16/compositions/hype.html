@@ -21,26 +21,29 @@
 
   </style>
   <div id="root" data-composition-id="hype" data-width="1080" data-height="1920">
-    <h2 id="hy-head" class="clip" data-start="0.36" data-duration="3.32" data-layout-allow-overlap><span id="hy-head-in">Der Hype<br />ist riesig</span></h2>
-    <div class="pc clip" id="hy-tr" data-start="1.77" data-duration="7.17" data-layout-ignore style="left:120px;top:790px;width:620px;height:349px">
+    <h2 id="hy-head" class="clip" data-start="0.69" data-duration="5.54" data-layout-allow-overlap><span id="hy-head-in">Trailer 1:<br />93 Mio.</span></h2>
+    <div class="pc clip" id="hy-tr" data-start="4.72" data-duration="4.94" data-layout-ignore style="left:120px;top:790px;width:620px;height:349px">
       <div class="pc-in" id="hy-tr-in"><img src="assets/img/couple-car.jpg" alt="" /></div>
     </div>
-    <div class="tag clip" id="hy-trl" data-start="2.13" data-duration="6.81" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:150px;top:1095px">
+    <div class="tag clip" id="hy-trl" data-start="5.15" data-duration="4.5" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:150px;top:1095px">
       <div class="tag-in" id="hy-trl-in" style="font-size:34px;padding:12px 20px">TRAILER 2 · Mai 2025</div>
     </div>
-    <div id="hy-num" class="clip" data-layout-allow-safe-zone data-start="3.57" data-duration="5.37" data-layout-allow-overflow data-layout-allow-overlap><span id="hy-n">0</span><span id="hy-mio">MIO.</span></div>
-    <p id="hy-sub" class="clip" data-start="5.08" data-duration="3.86" data-layout-allow-overlap><span id="hy-sub-in">Aufrufe in 24 Stunden</span></p>
-    <p id="hy-src" class="clip" data-start="5.74" data-duration="3.21" data-layout-allow-overlap><span id="hy-src-in">laut Rockstar Games, über alle Plattformen</span></p>
-    <div class="pc clip" id="hy-p1" data-start="2.63" data-duration="6.31" data-layout-ignore style="left:660px;top:760px;width:210px;height:311px">
+    <div class="tag clip" id="hy-yt" data-start="3.25" data-duration="2.85" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:650px">
+      <div class="tag-in" id="hy-yt-in" style="font-size:38px;padding:16px 24px">YouTube-Aufrufe an <b>einem Tag</b></div>
+    </div>
+    <div id="hy-num" class="clip" data-layout-allow-safe-zone data-start="6.16" data-duration="3.5" data-layout-allow-overflow data-layout-allow-overlap><span id="hy-n">0</span><span id="hy-mio">MIO.</span></div>
+    <p id="hy-sub" class="clip" data-start="7.41" data-duration="2.25" data-layout-allow-overlap><span id="hy-sub-in">Aufrufe in 24 Stunden</span></p>
+    <p id="hy-src" class="clip" data-start="7.94" data-duration="1.72" data-layout-allow-overlap><span id="hy-src-in">laut Rockstar Games, über alle Plattformen</span></p>
+    <div class="pc clip" id="hy-p1" data-start="1.9" data-duration="4.2" data-layout-ignore style="left:630px;top:370px;width:210px;height:311px">
       <div class="pc-in" id="hy-p1-in"><img src="assets/img/poster-a.jpg" alt="" /></div>
     </div>
-    <div class="pc clip" id="hy-p2" data-start="5.56" data-duration="3.39" data-layout-ignore style="left:580px;top:930px;width:200px;height:296px">
+    <div class="pc clip" id="hy-p2" data-start="7.8" data-duration="1.86" data-layout-ignore style="left:580px;top:930px;width:200px;height:296px">
       <div class="pc-in" id="hy-p2-in"><img src="assets/img/poster-c.jpg" alt="" /></div>
     </div>
-    <div class="tag clip" id="hy-rec" data-start="7.05" data-duration="1.89" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:900px">
-      <div class="tag-in" id="hy-rec-in" style="font-size:44px;padding:22px 28px">Größter Videostart<br /><b>aller Zeiten</b></div>
+    <div class="tag clip" id="hy-rec" data-start="8.7" data-duration="0.95" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:900px">
+      <div class="tag-in" id="hy-rec-in" style="font-size:92px;padding:22px 28px"><b>REKORD</b></div>
     </div>
-    <div id="hy-flood-clip" class="clip" data-start="8.45" data-duration="0.49" data-layout-ignore><div id="hy-flood"></div></div>
+    <div id="hy-flood-clip" class="clip" data-start="9.49" data-duration="0.17" data-layout-ignore><div id="hy-flood"></div></div>
   </div>
   <script>
     (function () {
@@ -55,21 +58,24 @@
       const blurOut = (sel, t) =>
         tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
 
-      blurIn("#hy-head-in", 0.41);
-      pop("#hy-tr-in", 1.82, 3);
-      pop("#hy-trl-in", 2.17, -2);
-      tl.to("#hy-head-in", { x: -1500, filter: "blur(14px)", duration: 0.3, ease: "power3.in" }, 3.32);
+      blurIn("#hy-head-in", 0.79);
+      pop("#hy-tr-in", 4.87, 3);
+      pop("#hy-trl-in", 5.18, -2);
+      tl.to("#hy-head-in", { x: -1500, filter: "blur(14px)", duration: 0.3, ease: "power3.in" }, 5.98);
       const counter = { v: 0 };
       const numEl = document.querySelector("#hy-n");
-      tl.fromTo("#hy-num", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 3.59);
-      tl.fromTo(counter, { v: 0 }, { v: 475, duration: 1.0, ease: "power3.out", onUpdate: () => { if (numEl) numEl.textContent = String(Math.round(counter.v)); } }, 3.62);
-      tl.fromTo("#hy-mio", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 4.52);
-      pop("#hy-p1-in", 2.67, 5);
-      blurIn("#hy-sub-in", 5.15);
-      pop("#hy-p2-in", 5.6, -5);
-      blurIn("#hy-src-in", 5.78);
-      tl.fromTo("#hy-rec-in", { opacity: 0, scale: 2.4, rotation: -3 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.16, ease: "power3.in" }, 7.09);
-      tl.fromTo("#hy-flood", { scaleX: 0 }, { scaleX: 1, duration: 0.42, ease: "power2.inOut" }, 8.5);
+      tl.fromTo("#hy-num", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 6.17);
+      tl.fromTo(counter, { v: 0 }, { v: 475, duration: 1.0, ease: "power3.out", onUpdate: () => { if (numEl) numEl.textContent = String(Math.round(counter.v)); } }, 6.19);
+      tl.fromTo("#hy-mio", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 6.94);
+      pop("#hy-p1-in", 1.95, 5);
+      unpop("#hy-p1-in", 5.9);
+      pop("#hy-yt-in", 3.3, -2);
+      unpop("#hy-yt-in", 5.9);
+      blurIn("#hy-sub-in", 7.47);
+      pop("#hy-p2-in", 7.83, -5);
+      blurIn("#hy-src-in", 7.97);
+      tl.fromTo("#hy-rec-in", { opacity: 0, scale: 2.4, rotation: -3 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.16, ease: "power3.in" }, 8.75);
+      tl.fromTo("#hy-flood", { scaleX: 0 }, { scaleX: 1, duration: 0.42, ease: "power2.inOut" }, 9.51);
 
       window.__timelines["hype"] = tl;
     })();

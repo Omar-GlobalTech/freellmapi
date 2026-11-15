@@ -18,21 +18,21 @@
 
   </style>
   <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
-    <div id="hk-five" class="clip" data-layout-allow-safe-zone data-start="0" data-duration="7.67" data-layout-allow-overflow><div id="hk-five-in">4</div></div>
-    <div id="hk-words" class="clip" data-start="0" data-duration="7.67" data-layout-allow-overlap>
+    <div id="hk-five" class="clip" data-layout-allow-safe-zone data-start="0" data-duration="7.62" data-layout-allow-overflow><div id="hk-five-in">4</div></div>
+    <div id="hk-words" class="clip" data-start="0" data-duration="7.62" data-layout-allow-overlap>
       <span class="hk-w" id="hk-w1">NOCH</span>
       <span class="hk-w" id="hk-w2">TAGE</span>
     </div>
-    <div class="pc clip" id="hk-art" data-start="1.24" data-duration="6.43" data-layout-ignore style="left:120px;top:700px;width:730px;height:411px">
+    <div class="pc clip" id="hk-art" data-start="1.14" data-duration="6.48" data-layout-ignore style="left:120px;top:700px;width:730px;height:411px">
       <div class="pc-in" id="hk-art-in"><img src="assets/img/keyart-date.jpg" alt="" /></div>
     </div>
-    <div class="tag clip" id="hk-day" data-start="2.17" data-duration="5.5" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:170px;top:625px">
+    <div class="tag clip" id="hk-day" data-start="1.98" data-duration="5.63" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:170px;top:625px">
       <div class="tag-in" id="hk-day-in" style="font-size:44px;padding:18px 30px">Donnerstag, <b>19.11.</b></div>
     </div>
-    <div class="tag clip" id="hk-long" data-start="3.06" data-duration="4.61" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1085px">
-      <div class="tag-in" id="hk-long-in" style="font-size:50px;padding:18px 28px 20px">Der Weg dahin<br />war lang</div>
+    <div class="tag clip" id="hk-long" data-start="2.79" data-duration="4.83" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1085px">
+      <div class="tag-in" id="hk-long-in" style="font-size:50px;padding:18px 28px 20px">13 Jahre nach<br /><b>GTA V</b></div>
     </div>
-    <div class="tag clip" id="hk-2014" data-start="5.06" data-duration="2.61" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:545px">
+    <div class="tag clip" id="hk-2014" data-start="4.82" data-duration="2.8" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:545px">
       <div class="tag-in" id="hk-2014-in" style="font-size:46px;padding:22px 32px">Seit <b>2014</b> in Arbeit</div>
     </div>
   </div>
@@ -50,13 +50,13 @@
         tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
 
       tl.fromTo("#hk-five-in", { scale: 1.22 }, { scale: 1, duration: 0.7, ease: "expo.out" }, 0);
-      blurIn("#hk-w1", 0.28);
-      blurIn("#hk-w2", 0.7);
-      pop("#hk-art-in", 1.31, 3);
-      pop("#hk-day-in", 2.23, -4);
-      pop("#hk-long-in", 3.14, 2);
-      pop("#hk-2014-in", 5.16, -4);
-      tl.fromTo(["#hk-five-in", "#hk-w1", "#hk-w2", "#hk-art-in", "#hk-day-in", "#hk-long-in", "#hk-2014-in"], { x: 0 }, { x: -2400, duration: 0.4, ease: "power3.in", stagger: 0.02, immediateRender: false }, 7.25);
+      blurIn("#hk-w1", 0.2);
+      blurIn("#hk-w2", 0.61);
+      pop("#hk-art-in", 1.21, 3);
+      pop("#hk-day-in", 2.04, -4);
+      pop("#hk-long-in", 2.86, 2);
+      pop("#hk-2014-in", 4.92, -4);
+      tl.fromTo(["#hk-five-in", "#hk-w1", "#hk-w2", "#hk-art-in", "#hk-day-in", "#hk-long-in", "#hk-2014-in"], { x: 0 }, { x: -2400, duration: 0.4, ease: "power3.in", stagger: 0.02, immediateRender: false }, 7.18);
 
       window.__timelines["hook"] = tl;
     })();

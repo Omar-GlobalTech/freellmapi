@@ -29,36 +29,39 @@
   </style>
   <div id="root" data-composition-id="facts" data-width="1080" data-height="1920">
     <div id="fx-paper" data-layout-ignore><div id="fx-sun"></div></div>
-    <div id="fx-b" class="clip" data-start="0" data-duration="3.96" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-b" class="clip" data-start="0" data-duration="5.2" data-layout-allow-overflow data-layout-allow-overlap>
       <div id="fx-b-in">
         <p id="fx-b-kick">Zum Start auf</p>
         <div class="fx-plat" id="fx-ps" style="font-size:280px">PS5</div>
         <div class="fx-plat" id="fx-xb">XBOX<br />SERIES X|S</div>
       </div>
     </div>
-    <div class="pc clip" id="fx-car" data-start="0.4" data-duration="3.56" data-layout-ignore style="left:470px;top:330px;width:380px;height:214px">
+    <div class="pc clip" id="fx-car" data-start="0.18" data-duration="5.02" data-layout-ignore style="left:470px;top:330px;width:380px;height:214px">
       <div class="pc-in" id="fx-car-in"><img src="assets/img/car.jpg" alt="" /></div>
     </div>
-    <div id="fx-a" class="clip" data-start="3.96" data-duration="2.13" data-layout-allow-overflow>
+    <div class="tag clip" id="fx-one" data-start="3.55" data-duration="1.65" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:120px;top:1010px">
+      <div class="tag-in" id="fx-one-in" style="font-size:36px;padding:16px 24px">Xbox One: nur per <b>Cloud</b></div>
+    </div>
+    <div id="fx-a" class="clip" data-start="5.15" data-duration="1.84" data-layout-allow-overflow>
       <div id="fx-a-in">
         <div id="fx-a-title"><span id="fx-a-t1">PRELOAD</span><br /><span id="fx-a-t2">LÄUFT</span></div>
         <div id="fx-bar"><div id="fx-bar-fill"></div></div>
         <p id="fx-a-sub"><span id="fx-a-sub-in">Seit dem 10. November</span></p>
       </div>
     </div>
-    <div id="fx-c" class="clip" data-start="6.08" data-duration="2.06" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fx-c" class="clip" data-start="6.99" data-duration="1.8" data-layout-allow-overflow data-layout-allow-overlap>
       <div id="fx-c-in">
         <div id="fx-pc">PC?<div id="fx-strike"></div></div>
-        <div id="fx-pc-note">Noch kein Termin</div>
+        <div id="fx-pc-note">Noch ohne Termin</div>
       </div>
     </div>
-    <div class="pc clip" id="fx-pool" data-start="6.35" data-duration="1.8" data-layout-ignore style="left:120px;top:900px;width:650px;height:260px">
+    <div class="pc clip" id="fx-pool" data-start="7.2" data-duration="1.6" data-layout-ignore style="left:120px;top:900px;width:650px;height:260px">
       <div class="pc-in" id="fx-pool-in"><img src="assets/img/pool.jpg" alt="" /></div>
     </div>
-    <div class="tag clip" id="fx-wait" data-start="6.54" data-duration="1.6" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:190px;top:1125px">
+    <div class="tag clip" id="fx-wait" data-start="7.35" data-duration="1.44" data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow style="left:190px;top:1125px">
       <div class="tag-in" id="fx-wait-in" style="font-size:38px;padding:12px 20px">PC-Spieler aktuell</div>
     </div>
-    <div id="fx-flood-clip" class="clip" data-start="7.67" data-duration="0.47" data-layout-ignore><div id="fx-flood"></div></div>
+    <div id="fx-flood-clip" class="clip" data-start="8.29" data-duration="0.5" data-layout-ignore><div id="fx-flood"></div></div>
   </div>
   <script>
     (function () {
@@ -73,22 +76,23 @@
       const blurOut = (sel, t) =>
         tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, t);
 
-      blurIn("#fx-b-kick", 0.1);
-      pop("#fx-car-in", 0.44, 3);
-      tl.fromTo("#fx-ps", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.71);
-      tl.fromTo("#fx-xb", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 2.7);
-      tl.fromTo(["#fx-b-in", "#fx-car-in"], { y: 0 }, { y: -2100, duration: 0.32, ease: "power3.in", immediateRender: false }, 3.65);
-      tl.fromTo("#fx-a-in", { y: 2000, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 3.96);
-      tl.fromTo("#fx-bar-fill", { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: "power1.inOut" }, 4.21);
-      tl.fromTo("#fx-a-sub-in", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 4.6);
-      tl.fromTo("#fx-a-in", { y: 0 }, { y: -2100, duration: 0.3, ease: "power3.in", immediateRender: false }, 5.84);
-      tl.fromTo("#fx-c-in", { y: 2000, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 6.08);
+      blurIn("#fx-b-kick", 0.04);
+      pop("#fx-car-in", 0.2, 3);
+      pop("#fx-one-in", 3.6, -2);
+      tl.fromTo("#fx-ps", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 0.83);
+      tl.fromTo("#fx-xb", { opacity: 0, x: -80, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 1.99);
+      tl.fromTo(["#fx-b-in", "#fx-car-in", "#fx-one-in"], { y: 0 }, { y: -2100, duration: 0.32, ease: "power3.in", immediateRender: false }, 4.85);
+      tl.fromTo("#fx-a-in", { y: 2000, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 5.15);
+      tl.fromTo("#fx-bar-fill", { scaleX: 0 }, { scaleX: 1, duration: 1.15, ease: "power1.inOut" }, 5.45);
+      tl.fromTo("#fx-a-sub-in", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 5.6);
+      tl.fromTo("#fx-a-in", { y: 0 }, { y: -2100, duration: 0.3, ease: "power3.in", immediateRender: false }, 6.8);
+      tl.fromTo("#fx-c-in", { y: 2000, filter: "blur(14px)" }, { y: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 6.99);
       tl.set("#fx-pc-note", { opacity: 0 }, 0);
-      pop("#fx-pool-in", 6.38, -3);
-      pop("#fx-wait-in", 6.58, 2);
-      tl.fromTo("#fx-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 6.74);
-      tl.fromTo("#fx-pc-note", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 6.84);
-      tl.fromTo("#fx-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power2.inOut" }, 7.71);
+      pop("#fx-pool-in", 7.23, -3);
+      pop("#fx-wait-in", 7.38, 2);
+      tl.fromTo("#fx-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 7.51);
+      tl.fromTo("#fx-pc-note", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 7.59);
+      tl.fromTo("#fx-flood", { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power2.inOut" }, 8.33);
 
       window.__timelines["facts"] = tl;
     })();
